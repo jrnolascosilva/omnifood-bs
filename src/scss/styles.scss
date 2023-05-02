@@ -68,6 +68,19 @@ $primary: #e77e23;
 
 $enable-cssgrid: true;
 
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 5.2rem,
+  2: 4.4rem,
+  3: 3.6rem,
+  4: 3rem,
+  5: 2.4rem,
+  6: 2rem,
+  7: 1.8rem,
+  8: 1.6rem,
+  9: 1.4rem,
+);
+
 /* .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -77,5 +90,15 @@ $enable-cssgrid: true;
   width: 100px;
 }
 
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+}
+
+.hero-description {
+  line-height: 1.5;
+}
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
