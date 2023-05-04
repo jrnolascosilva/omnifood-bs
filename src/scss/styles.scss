@@ -63,9 +63,15 @@ $font-size-root: 62.5%;
 $font-family-sans-serif: "Rubik", sans-serif;
 $line-height-base: 1;
 $font-weight-normal: 400;
-$body-color: #555;
+$body-color: #333;
+$body-secondary-color: #555;
 $primary: #e77e23;
-
+/* Buttons */
+$input-btn-font-size: 2rem;
+$input-btn-padding-y: 1.6rem;
+$input-btn-padding-x: 3.2rem;
+$btn-color: #fff;
+$btn-border-radius: 9px;
 $enable-cssgrid: true;
 
 // scss-docs-start display-headings
@@ -81,13 +87,64 @@ $display-font-sizes: (
   9: 1.4rem,
 );
 
-/* .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
+.jn-mb-12 {
+  margin-bottom: 0.2em;
+}
+.jn-mb-11 {
+  margin-bottom: 0.4em;
+}
+
+.jn-mb-10 {
+  margin-bottom: 0.8em;
+}
+
+.jn-mb-9 {
+  margin-bottom: 1.2em;
+}
+
+.jn-mb-8 {
+  margin-bottom: 1.6em;
+}
+
+.jn-mb-7 {
+  margin-bottom: 2.4em;
+}
+
+.jn-mb-6 {
+  margin-bottom: 3.2em;
+}
+
+.jn-mb-5 {
+  margin-bottom: 4.8em;
+}
+
+.jn-mb-4 {
+  margin-bottom: 6.4em;
+}
+
+.jn-mb-3 {
+  margin-bottom: 8em;
+}
+
+.jn-mb-2 {
+  margin-bottom: 9.6em;
+}
+
+.jn-mb-1 {
+  margin-bottom: 12.8em;
+}
 
 .hero-img {
   width: 100px;
+}
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 9.6rem 0;
+}
+
+.section-hero .row {
+  gap: 9.6rem;
 }
 
 .heading-primary {
@@ -95,10 +152,38 @@ $display-font-sizes: (
   font-weight: 700;
   line-height: 1.05;
   color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
 }
 
 .hero-description {
-  line-height: 1.5;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.6rem;
 }
+
+.btn.btn-primary {
+  color: #fff;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:active {
+  color: #fff;
+}
+
+.btn.btn-outline-primary {
+  background-color: #fff;
+}
+
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-primary:active {
+  background-color: #fdf2e9;
+}
+
+.btn-primary--call {
+}
+.btn-outline-primary--secondary {
+}
+
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
