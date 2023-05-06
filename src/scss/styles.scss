@@ -65,16 +65,50 @@ $line-height-base: 1;
 $font-weight-normal: 400;
 $body-color: #333;
 $body-secondary-color: #555;
-$primary: #e77e23;
+$primary: rgb(181, 8, 8);
+
 /* Buttons */
 $input-btn-font-size: 2rem;
 $input-btn-padding-y: 1.6rem;
 $input-btn-padding-x: 3.2rem;
 $btn-color: #fff;
 $btn-border-radius: 9px;
-$enable-cssgrid: true;
+
+//We have to import the functions first to use map.merge()
+@import "bootstrap/scss/functions";
+
+// We have to import the variables beforehand to use the variable $grid-breakpoints.
+// Otherwise, compiler will show error - '$grid-breakpoints undefined.'
+@import "bootstrap/scss/variables";
+
+// Create your own map
+$custom-colors: (
+  "primary": $primary,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// - Spacing system (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+$spacers: (
+  0: 0,
+  1: $spacer * calc(2 / 10),
+  2: $spacer * calc(4 / 10),
+  3: $spacer * calc(8 / 10),
+  4: $spacer * calc(12 / 10),
+  5: $spacer * calc(16 / 10),
+  6: $spacer * calc(24 / 10),
+  7: $spacer * calc(32 / 10),
+  8: $spacer * calc(48 / 10),
+  9: $spacer * calc(64 / 10),
+  10: $spacer * calc(80 / 10),
+  11: $spacer * calc(96 / 10),
+  12: $spacer * calc(128 / 10),
+);
 
 // scss-docs-start display-headings
+/*
 $display-font-sizes: (
   1: 5.2rem,
   2: 4.4rem,
@@ -86,53 +120,10 @@ $display-font-sizes: (
   8: 1.6rem,
   9: 1.4rem,
 );
+*/
 
-.jn-mb-12 {
-  margin-bottom: 0.2em;
-}
-.jn-mb-11 {
-  margin-bottom: 0.4em;
-}
-
-.jn-mb-10 {
-  margin-bottom: 0.8em;
-}
-
-.jn-mb-9 {
-  margin-bottom: 1.2em;
-}
-
-.jn-mb-8 {
-  margin-bottom: 1.6em;
-}
-
-.jn-mb-7 {
-  margin-bottom: 2.4em;
-}
-
-.jn-mb-6 {
-  margin-bottom: 3.2em;
-}
-
-.jn-mb-5 {
-  margin-bottom: 4.8em;
-}
-
-.jn-mb-4 {
-  margin-bottom: 6.4em;
-}
-
-.jn-mb-3 {
-  margin-bottom: 8em;
-}
-
-.jn-mb-2 {
-  margin-bottom: 9.6em;
-}
-
-.jn-mb-1 {
-  margin-bottom: 12.8em;
-}
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
 
 .hero-img {
   width: 100px;
@@ -162,28 +153,6 @@ $display-font-sizes: (
   margin-bottom: 4.6rem;
 }
 
-.btn.btn-primary {
-  color: #fff;
-}
-
-.btn.btn-primary:hover,
-.btn.btn-primary:active {
-  color: #fff;
-}
-
-.btn.btn-outline-primary {
-  background-color: #fff;
-}
-
-.btn.btn-outline-primary:hover,
-.btn.btn-outline-primary:active {
-  background-color: #fdf2e9;
-}
-
-.btn-primary--call {
-}
-.btn-outline-primary--secondary {
-}
-
-// Import all of Bootstrap's CSS
-@import "bootstrap/scss/bootstrap";
+/* .btn-primary {
+  color: $btn-color;
+} */
