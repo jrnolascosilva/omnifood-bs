@@ -61,7 +61,7 @@ Medium: 11px
 /* Percentage of user's browser font-size setting */
 $font-size-root: 62.5%;
 $font-family-sans-serif: "Rubik", sans-serif;
-$line-height-base: 1;
+//$line-height-base: 1;
 $font-weight-normal: 400;
 $body-color: #333;
 $body-secondary-color: #555;
@@ -80,16 +80,9 @@ $btn-border-radius: 9px;
 // We have to import the variables beforehand to use the variable $grid-breakpoints.
 // Otherwise, compiler will show error - '$grid-breakpoints undefined.'
 @import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
 
-// Create your own map
-$custom-colors: (
-  "primary": $primary,
-);
-
-// Merge the maps
-$theme-colors: map-merge($theme-colors, $custom-colors);
-
-// - Spacing system (px)
+/// - Spacing system (px)
 // 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 $spacers: (
   0: 0,
@@ -107,20 +100,67 @@ $spacers: (
   12: $spacer * calc(128 / 10),
 );
 
-// scss-docs-start display-headings
-/*
-$display-font-sizes: (
-  1: 5.2rem,
-  2: 4.4rem,
-  3: 3.6rem,
-  4: 3rem,
-  5: 2.4rem,
-  6: 2rem,
-  7: 1.8rem,
-  8: 1.6rem,
-  9: 1.4rem,
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: 9.8rem,
+  2: 8.6rem,
+  3: 7.4rem,
+  4: 6.2rem,
+  5: 5.2rem,
+  6: 4.4rem,
+  7: 3.6rem,
+  8: 3rem,
+  9: 2.4rem,
+  10: 2rem,
+  11: 1.8rem,
+  12: 1.6rem,
+  13: 1.4rem,
+  14: 1.2rem,
+  15: 1rem,
 );
-*/
+// Create your own map
+$custom-colors: (
+  "primary": $primary,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrap/scss/maps"; // Bootstrap 5.2+
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$utilities: (
+  "line-height":
+    map-merge(
+      map-get($utilities, "line-height"),
+      (
+        property: line-height,
+        class: lh,
+        values: (
+          1: 1,
+          tiny: 1.02,
+          sm: $line-height-sm,
+          base: $line-height-base,
+          lg: $line-height-lg,
+        ),
+      )
+    ),
+);
+
+$utilities: (
+  "letter-spacing": (
+    property: letter-spacing,
+    class: ls,
+    values: (
+      negative-one: -1px,
+      negative-half: -0.5px,
+      positive-one: 1px,
+      positive-half: 0.5px,
+    ),
+  ),
+);
+//@import "bootstrap/scss/utilities/api";
 
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
