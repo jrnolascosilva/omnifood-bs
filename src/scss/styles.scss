@@ -59,6 +59,7 @@ Medium: 11px
 /* font-size: 10px; */
 /* 10px / 16px = 0.625 = 62.5% */
 /* Percentage of user's browser font-size setting */
+$enable-rfs: false;
 $font-size-root: 62.5%;
 $font-family-sans-serif: "Rubik", sans-serif;
 //$line-height-base: 1;
@@ -84,6 +85,7 @@ $btn-border-radius: 9px;
 
 /// - Spacing system (px)
 // 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+/*
 $spacers: (
   0: 0,
   1: $spacer * calc(2 / 10),
@@ -99,9 +101,62 @@ $spacers: (
   11: $spacer * calc(96 / 10),
   12: $spacer * calc(128 / 10),
 );
+*/
+
+$spacers: (
+  0: 0,
+  2: $spacer * calc(2 / 10),
+  4: $spacer * calc(4 / 10),
+  8: $spacer * calc(8 / 10),
+  12: $spacer * calc(12 / 10),
+  16: $spacer * calc(16 / 10),
+  24: $spacer * calc(24 / 10),
+  32: $spacer * calc(32 / 10),
+  48: $spacer * calc(48 / 10),
+  64: $spacer * calc(64 / 10),
+  80: $spacer * calc(80 / 10),
+  96: $spacer * calc(96 / 10),
+  128: $spacer * calc(128 / 10),
+);
+
+$font-sizes: (
+  10: 1rem,
+  12: 1.2rem,
+  14: 1.4rem,
+  16: 1.6rem,
+  18: 1.8rem,
+  20: 2rem,
+  24: 2.4rem,
+  30: 3rem,
+  36: 3.6rem,
+  44: 4.4rem,
+  52: 5.2rem,
+  62: 6.2rem,
+  74: 7.4rem,
+  86: 8.6rem,
+  98: 9.8rem,
+);
+
+$display-font-sizes: (
+  10: 1rem,
+  12: 1.2rem,
+  14: 1.4rem,
+  16: 1.6rem,
+  18: 1.8rem,
+  20: 2rem,
+  24: 2.4rem,
+  30: 3rem,
+  36: 3.6rem,
+  44: 4.4rem,
+  52: 5.2rem,
+  62: 6.2rem,
+  74: 7.4rem,
+  86: 8.6rem,
+  98: 9.8rem,
+);
 
 // scss-docs-start font-sizes
-$font-sizes: (
+/* $font-sizes: (
   1: 9.8rem,
   2: 8.6rem,
   3: 7.4rem,
@@ -117,7 +172,7 @@ $font-sizes: (
   13: 1.4rem,
   14: 1.2rem,
   15: 1rem,
-);
+); */
 // Create your own map
 $custom-colors: (
   "primary": $primary,
@@ -146,13 +201,18 @@ $utilities: (
     property: letter-spacing,
     class: ls,
     values: (
-      negative-one: -1px,
-      negative-half: -0.5px,
-      positive-one: 1px,
-      positive-half: 0.5px,
+      negative-100: -1px,
+      negative-050: -0.5px,
+      negative-025: -0.25px,
+      negative-075: -0.75px,
+      positive-100: 1px,
+      positive-050: 0.5px,
+      positive-025: 0.25px,
+      positive-075: 0.75px,
     ),
   ),
 );
+
 //@import "bootstrap/scss/utilities/api";
 
 // Import all of Bootstrap's CSS
@@ -192,9 +252,15 @@ $utilities: (
   height: 4.8rem;
   border-radius: 50%;
   margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
 }
 
 .delivered-imgs img:last-child {
   margin: 0;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
 }
 //**************************************
