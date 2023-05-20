@@ -1,0 +1,21 @@
+// Example override Bootstrap variable for button
+// $btn-padding-y: 10rem;
+
+/* font-size: 10px; */
+/* 10px / 16px = 0.625 = 62.5% */
+/* Percentage of user's browser font-size setting */
+$enable-rfs: false;
+$font-size-root: 62.5%;
+$font-family-sans-serif: "Rubik", sans-serif;
+//$line-height-base: 1;
+$font-weight-normal: 400;
+$body-color: #333;
+$body-secondary-color: #555;
+$primary: rgb(181, 8, 8);
+
+/* Buttons */
+$input-btn-font-size: 2rem;
+$input-btn-padding-y: 1.6rem;
+$input-btn-padding-x: 3.2rem;
+$btn-color: #fff;
+$btn-border-radius: 9px;

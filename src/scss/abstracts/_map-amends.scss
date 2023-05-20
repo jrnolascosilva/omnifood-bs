@@ -1,0 +1,66 @@
+// Create your own map
+// $custom-colors: (
+//   "custom-color": #900
+// );
+
+// Merge the maps
+// $theme-colors: map-merge($theme-colors, $custom-colors);
+
+$spacers: (
+  0: 0,
+  2: $spacer * calc(2 / 10),
+  4: $spacer * calc(4 / 10),
+  8: $spacer * calc(8 / 10),
+  12: $spacer * calc(12 / 10),
+  16: $spacer * calc(16 / 10),
+  24: $spacer * calc(24 / 10),
+  32: $spacer * calc(32 / 10),
+  48: $spacer * calc(48 / 10),
+  64: $spacer * calc(64 / 10),
+  80: $spacer * calc(80 / 10),
+  96: $spacer * calc(96 / 10),
+  128: $spacer * calc(128 / 10),
+);
+
+$font-sizes: (
+  10: 1rem,
+  12: 1.2rem,
+  14: 1.4rem,
+  16: 1.6rem,
+  18: 1.8rem,
+  20: 2rem,
+  24: 2.4rem,
+  30: 3rem,
+  36: 3.6rem,
+  44: 4.4rem,
+  52: 5.2rem,
+  62: 6.2rem,
+  74: 7.4rem,
+  86: 8.6rem,
+  98: 9.8rem,
+);
+
+$display-font-sizes: (
+  10: 1rem,
+  12: 1.2rem,
+  14: 1.4rem,
+  16: 1.6rem,
+  18: 1.8rem,
+  20: 2rem,
+  24: 2.4rem,
+  30: 3rem,
+  36: 3.6rem,
+  44: 4.4rem,
+  52: 5.2rem,
+  62: 6.2rem,
+  74: 7.4rem,
+  86: 8.6rem,
+  98: 9.8rem,
+);
+
+$custom-colors: (
+  "primary": $primary,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
